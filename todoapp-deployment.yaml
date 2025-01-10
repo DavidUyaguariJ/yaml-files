@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: todoproject
+  name: todoproject
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      name: todoproject
+  template:
+    metadata:
+      labels:
+        name: todoproject
+    spec:
+      containers:
+      - name: prueba-gha
+        image: daviduyaguarij/todoproject:{tag}
+        ports:
+        - containerPort: 5173
+          name: http
