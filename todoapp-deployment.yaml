@@ -2,21 +2,28 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: todoproject
-  name: todoproject
+    app: management
+  name: management
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
-      name: todoproject
+      name: management
   template:
     metadata:
       labels:
-        name: todoproject
+        name: management
     spec:
       containers:
-      - name: prueba-gha
-        image: daviduyaguarij/todoproject:{tag}
+      - name: management
+        image: daviduyaguarij/backend-microservice:363b7d9aafa62467f98b29de7f6e43ff2ed497a8
         ports:
-        - containerPort: 5173
+        - containerPort: 8080
           name: http
+        env:
+        - name: DB_URL
+          value: "jdbc:mysql://inventory:3306/final-project?createDatabaseIfNotExist=true&serverTimezone=UTC"
+        - name: DB_USERNAME
+          value: "root"
+        - name: DB_PASSWORD
+          value: "@administration2025"
