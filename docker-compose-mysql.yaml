@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   mysql:
     image: mysql:latest
@@ -8,9 +6,9 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: "@administration2025"
-      MYSQL_PASSWORD: "@administration2025"
-      MYSQL_DATABASE: final-project
+      MYSQL_ROOT_PASSWORD: "@dministration2025"
+      MYSQL_PASSWORD: "@dministration2025"
+      MYSQL_DATABASE: nttdata-project
     restart: always
 
 volumes:
