@@ -1,14 +1,31 @@
-# Ejemplos de Archivos YAML para Kubernetes y docker compose
+# Ejemplos de Archivos YAML para Kubernetes y Docker Compose
 
 ## Descripción
 
-Este repositorio contiene ejemplos de archivos YAML para inicializar bases de datos y realizar despliegues (deployments) utilizando **Kubernetes (K8s)**. Los archivos proporcionados cubren casos comunes y básicos para configurar y gestionar servicios en un clúster de Kubernetes, incluyendo bases de datos y aplicaciones. Estos ejemplos están destinados a ser utilizados como referencia para crear y administrar recursos de Kubernetes en entornos de producción o desarrollo.
+Este repositorio contiene ejemplos prácticos de **archivos YAML** y **Dockerfiles** para el despliegue de aplicaciones y servicios utilizando **Kubernetes (K8s)** y **Docker Compose**. Está orientado a entornos de **desarrollo**, **pruebas** y **producción**, y sirve como referencia para configurar infraestructura, bases de datos y aplicaciones comunes en plataformas cloud y locales.
 
-## Contenido del Repositorio
+Incluye ejemplos de:
 
-El repositorio está organizado en carpetas y archivos que incluyen configuraciones típicas de Kubernetes:
+- Despliegues en Kubernetes
+- Configuración de servicios e Ingress
+- Inicialización de bases de datos
+- Uso de Dockerfiles y Docker Compose
+- Casos reales desplegados en **IBM Cloud Kubernetes Service**, como **SonarQube** y **MLflow**
 
-- **`bases-de-datos/`**: Ejemplos de archivos YAML para configurar bases de datos (por ejemplo, MySQL, PostgreSQL) en Kubernetes.
-- **`deployments/`**: Archivos YAML para la creación y gestión de despliegues (deployments) de aplicaciones dentro de un clúster de Kubernetes.
-- **`services/`**: Archivos YAML para exponer aplicaciones a través de servicios de Kubernetes.
-- **`volumes/`**: Ejemplos de configuración de volúmenes persistentes para bases de datos o aplicaciones.
+---
+
+## Estructura del Repositorio
+
+El repositorio está organizado por tecnología para facilitar su uso y mantenimiento:
+
+```text
+.
+├── docker-files/
+│
+├── kubernetes/\
+│   ├── deployments/
+│   ├── sonarqube/
+│   ├── mlflow/
+│   └── ingress/
+│
+└── README.md
