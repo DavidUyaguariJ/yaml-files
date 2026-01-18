@@ -1,0 +1,15 @@
+services:
+  mysql:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "@dministration2025"
+      MYSQL_PASSWORD: "@dministration2025"
+      MYSQL_DATABASE: nttdata-project
+    restart: always
+
+volumes:
+  mysql_data:

@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres_unibe
+    restart: always
+    environment:
+      POSTGRES_DB: unibe_matricula
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres_net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  postgres_net:
+    driver: bridge
