@@ -16,10 +16,3 @@ volumes:
 networks:
   bridge_network:
     driver: bridge
-
-volumes:
-  sqlserverdata:
-    
-networks:
-  bridge_network:
-    driver: bridge

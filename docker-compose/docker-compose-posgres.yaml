@@ -1,0 +1,30 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: postgres_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: "@administration2026"
+      POSTGRES_DB: lopdpe
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql
+    networks:
+      - securehub_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d lopdpe"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  securehub_network:
+    name: securehub_network
+    driver: bridge
+
+volumes:
+  postgres_data:
+    name: postgres_data
